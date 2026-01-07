@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>:(</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@200;300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- BSOD Screen -->
+    <div class="bsod-screen" id="bsod-screen">
+        <div class="bsod-content">
+            <div class="sad-face">:(</div>
+            <h1 class="bsod-title">Votre PC a rencontré un problème et doit redémarrer. Nous collectons simplement des
+                informations relatives aux erreurs, puis nous allons redémarrer.</h1>
+
+            <div class="progress-section">
+                <span class="progress-text"><span id="progress-percent">0</span>% terminé</span>
+            </div>
+
+            <div class="info-section">
+                <div class="qr-section">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://www.cybermalveillance.gouv.fr/&bgcolor=0078D4&color=FFFFFF"
+                        alt="QR Code" class="qr-code">
+                </div>
+                <div class="info-text">
+                    <p>Pour plus d'informations sur ce problème et les solutions possibles, visitez <span
+                            class="link">https://www.windows.com/stopcode</span></p>
+                    <p class="support-text">Si vous appelez un support technique, communiquez-lui les informations
+                        suivantes :</p>
+                    <p class="stop-code">Code d'arrêt : SESSION_LEFT_UNLOCKED</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="escape-hint" id="escape-hint">
+            Cliquez n'importe où ou appuyez sur <kbd>Espace</kbd> pour continuer...
+        </div>
+    </div>
+
+    <!-- Prank Reveal Screen -->
+    <div class="prank-screen hidden" id="prank-screen">
+        <!-- Confetti Canvas -->
+        <canvas id="confetti-canvas"></canvas>
+
+        <div class="prank-container">
+            <div class="prank-card">
+                <div class="prank-badge">
+                    <span class="badge-icon">🚨</span>
+                    <span>TU T'ES FAIT AVOIR !</span>
+                </div>
+
+                <div class="prank-emoji">😈</div>
+
+                <h1 class="prank-title">GRILLÉ !</h1>
+
+                <p class="prank-message">
+                    Tu as laissé ton PC <strong>déverrouillé</strong> !
+                    <br>Maintenant tu dois payer ta dette...
+                </p>
+
+                <div class="punishment-section">
+                    <label for="punishment-select" class="select-label">Choisis ta punition :</label>
+                    <div class="select-wrapper">
+                        <select id="punishment-select" class="punishment-select">
+                            <option value="🥐|Croissants|Tu dois ramener des croissants pour tout le monde !">🥐
+                                Croissants</option>
+                            <option value="🍕|Pizza|Tu dois commander une pizza pour l'équipe !">🍕 Pizza</option>
+                            <option value="🍺|Tournée de bières|Tu paies la prochaine tournée au bar !">🍺 Tournée de
+                                bières</option>
+                            <option value="☕|Cafés|Tu offres les cafés pendant une semaine !">☕ Cafés</option>
+                            <option value="🍩|Donuts|Tu ramènes une boîte de donuts demain !">🍩 Donuts</option>
+                            <option value="🧁|Pâtisseries|Tu dois apporter des pâtisseries !">🧁 Pâtisseries</option>
+                            <option value="🍫|Chocolats|Tu dois une boîte de chocolats !">🍫 Chocolats</option>
+                            <option value="🍬|Bonbons|Tu ramènes un sachet de bonbons !">🍬 Bonbons</option>
+                            <option value="🧹|Ménage|Tu fais le ménage du bureau !">🧹 Ménage du bureau</option>
+                            <option value="💀|Choix du chef|Le chef décide de ta punition...">💀 Choix du chef</option>
+                        </select>
+                        <div class="select-arrow">▼</div>
+                    </div>
+                </div>
+
+                <button class="confirm-btn" id="confirm-btn">
+                    <span class="btn-text">CONFIRMER LA PUNITION</span>
+                    <span class="btn-icon">⚡</span>
+                </button>
+            </div>
+
+            <!-- Result Card -->
+            <div class="result-card hidden" id="result-card">
+                <div class="result-emoji" id="result-emoji">🥐</div>
+                <h2 class="result-title" id="result-title">Croissants</h2>
+                <p class="result-message" id="result-message">Tu dois ramener des croissants pour tout le monde !</p>
+
+                <div class="verdict">
+                    <span class="verdict-label">VERDICT:</span>
+                    <span class="verdict-text">COUPABLE</span>
+                </div>
+
+                <div class="date-stamp">
+                    <span id="current-date"></span>
+                </div>
+
+                <button class="back-btn" id="back-btn">← Choisir une autre punition</button>
+            </div>
+
+            <footer class="footer">
+                <p>🔐 Conseil : <strong>Win + L</strong> pour verrouiller ton PC !</p>
+                <p class="footer-small">Fait avec 😈 pour piéger les collègues</p>
+            </footer>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
