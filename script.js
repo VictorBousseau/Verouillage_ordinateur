@@ -12,6 +12,7 @@ const resultMessage = document.getElementById('result-message');
 const currentDate = document.getElementById('current-date');
 const progressPercent = document.getElementById('progress-percent');
 const escapeHint = document.getElementById('escape-hint');
+const resolveBtn = document.getElementById('resolve-btn');
 const confettiCanvas = document.getElementById('confetti-canvas');
 
 let ctx = null;
@@ -63,6 +64,9 @@ function animateProgress() {
         if (progress < targetProgress) {
             const delay = Math.random() > 0.9 ? 500 : 50;
             setTimeout(updateProgress, delay);
+        } else {
+            // Show resolve button at 100%
+            if (resolveBtn) resolveBtn.classList.remove('hidden');
         }
     }
 
@@ -327,6 +331,10 @@ function init() {
     // Prank screen event listeners
     if (confirmBtn) confirmBtn.addEventListener('click', handleConfirm);
     if (backBtn) backBtn.addEventListener('click', handleBack);
+    if (resolveBtn) resolveBtn.addEventListener('click', (e) => {
+        e.stopPropagation(); // Avoid triggering bsodClick
+        revealPrank();
+    });
 
     // Start progress animation
     animateProgress();

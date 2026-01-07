@@ -612,3 +612,34 @@ body {
         font-size: 4rem;
     }
 }
+
+/* ===== New Additions ===== */
+.dont-turn-off {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.resolve-btn {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    font-family: inherit;
+    font-weight: 400;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 1rem;
+    display: inline-block;
+}
+
+.resolve-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.resolve-btn.hidden {
+    display: none;
+}
